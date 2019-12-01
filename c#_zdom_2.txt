@@ -1,0 +1,18 @@
+static void Main(string[] args)
+        {
+            Console.Write("hej! Podaj Imię:\n> ");
+            string name = Console.ReadLine();
+
+            string name2 = xxx(name);
+            
+            Console.WriteLine($"Po zmianie {name2}");
+
+            Console.ReadLine();
+        }
+
+        static string xxx(string im)
+        {
+            string imie = im.ToLower(); 
+            string name2 = imie[0].ToString().ToUpper() + imie.Substring(1);
+            return name2;
+        }
