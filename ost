@@ -1,0 +1,145 @@
+static void wTab(int []tab)
+        {
+            for (int i = 0; i < tab.Length; i++)
+            {
+                Console.Write(tab[i] + ", ");
+
+
+            }
+        }
+        static void Main(string[] args)
+        {
+            int n;
+            Console.Write("Podaj ilosc liczb:\n>");
+            n = int.Parse(Console.ReadLine());
+            int[] tab = new int[n];
+            Random rnd = new Random();
+
+            for (int i=0;i<n;i++)
+            {
+                tab[i] = rnd.Next(1, 21);
+
+            }
+            wTab(tab);
+
+            Console.ReadLine();
+        }
+-----------------------------------------------------------------
+static void wTab(int []tab)
+        {
+            
+            for (int i = 0; i < tab.Length; i++)
+            {
+                
+                Console.Write(tab[i] + ", ");
+
+            }
+        }
+        static void zTab(int[] tab)
+        {
+            int sum = 0;
+            for (int i = 0; i < tab.Length; i++)
+            {
+
+                sum = sum + tab[i];
+                Console.Write(sum + ", ");
+                
+
+            }
+        }
+        static void Main(string[] args)
+        {
+            int n;
+            Console.Write("Podaj ilosc liczb:\n>");
+            n = int.Parse(Console.ReadLine());
+
+            int[] tab = new int[n];
+            Random rnd = new Random();
+
+            for (int i=0;i<n;i++)
+            {
+                tab[i] = rnd.Next(1, 21);
+
+            }
+            wTab(tab);
+            Console.WriteLine("\n");
+            zTab(tab);
+            
+
+
+            Console.ReadLine();
+        }
+-----------------------------------------------//pref[i]=pref[i-1]+tab[i];--------
+
+ static List<string> names = new List<string>();
+        
+        static void Main(string[] args)
+        {
+            bool exit = false;
+            int x;
+            while (exit != true)
+            {
+
+
+                Console.WriteLine("\n");
+                Console.WriteLine("Menu");
+                Console.WriteLine("1.Dodaj osobe");
+                Console.WriteLine("2.pokaz dane");
+                Console.WriteLine("3.wyjscie");
+                Console.WriteLine("\n");
+                if(int.TryParse(Console.ReadLine(), out x) == false)
+                {
+                    Console.WriteLine("blad wprowadzania!");
+                }
+
+                switch(x)
+                    {
+                    case 1:
+                        {
+                            AddPerson();
+                            break;
+                        }
+
+                    case 2:
+                        {
+                            Show();
+                            
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.WriteLine("exit");
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("nie ma takiej opcji");
+                            break;
+                        }
+                }
+            }
+
+            Console.ReadLine();
+        }
+        private static void AddPerson()
+        {
+            string name;
+            Console.WriteLine("Podaj imie");
+            name = Console.ReadLine();
+            names.Add(name);
+        }
+        private static void Show()
+        {
+            foreach( string name in names)
+            {
+                Console.WriteLine(name);
+            }
+           
+        }
+
+        
+
+       
+
+    }
+}
