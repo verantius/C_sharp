@@ -1,0 +1,45 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Podaj tekst:\n> ");
+            string slowo = Console.ReadLine();
+
+            
+   
+            if (CzyPalindrom(slowo)==true)
+            {
+                Console.WriteLine("TAK!");
+            }
+            else
+            {
+                Console.WriteLine("NIE!");
+
+
+            }
+
+            Console.ReadLine();
+        }
+
+        static bool CzyPalindrom(string str)
+        {
+            bool result = true;
+            int n = str.Length;
+            str = str.ToLower();
+            for (int i=0; i<n/2;i++)
+            {
+                if (str[i]!=str[n-1-i])
+                {
+                    result = false;
+                    break;
+
+                }
+            }
+            
+            return result;
+        }
+
+       
+
+    }
+}
