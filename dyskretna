@@ -1,0 +1,26 @@
+static void Main(string[] args)
+        {
+            //Console.WriteLine("");
+            int r;
+            int l = 12;
+
+            Console.Write("Zaczynamy? press 1\n> ");
+            r = int.Parse(Console.ReadLine());
+            int[] F = new int[l];
+
+            while (r == 1)
+            {
+                F[0] = 7;
+                for (int i = 1; i <= 11; i++)
+                {
+                    F[i] = F[i - 1] + (10 * i) + 7;
+
+                    Console.WriteLine($"Funkcja F dla n={i} wynosi: {F[i]}\n");
+
+                }
+                Console.WriteLine("jeszcze raz ? pres1");
+                r = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("koniec programu!");
+        }
