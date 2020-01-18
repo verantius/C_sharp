@@ -1,0 +1,976 @@
+Poniższe rozwiązania są tylko propozycją. Możliwe są inne podejścia, sposoby. 
+
+zad. 2. Napisać program wypisujący na ekranie konsoli tekst: 'Witaj, <imię>!', gdzie <imię> jest imieniem podanym przez użytkownika w trakcie wykonywania programu. 
+
+Rozwiązanie: 
+
+using System;
+
+namespace WitajImie
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string imie;
+
+            Console.Write("Podaj swoje imię: ");
+            imie = Console.ReadLine();
+            Console.Write("Witaj " + imie + "!");
+            Console.Read(); 
+        }
+    }
+}
+
+zad. 3. Napisać program wczytujący z klawiatury liczbę całkowitą i wypisujący na ekranie konsoli sześcian wczytanej liczby. 
+
+Rozwiązanie: 
+
+using System;
+
+namespace Szescian
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int liczba;
+
+            Console.Write("Podaj liczbę: ");
+            liczba = int.Parse(Console.ReadLine());
+            Console.Write("Sześcian podanej liczby wynosi: {0}", liczba*liczba*liczba);
+            Console.Read(); 
+        }
+    }
+}
+
+uwaga 1: można zamiast liczba*liczba*liczba wykorzystać dostępną funkcję Math.Pow: liczba*liczba*liczba to inaczej Math.Pow(liczba, 3)
+
+uwaga 2: użytkownik programu może błędnie podać wartość która nie będzie liczbą całkowita albo wogle liczbą, wówczas można użyć metody int.TryParse: 
+
+Rozwiązanie: 
+
+using System;
+
+namespace Szescian
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		string liczba;
+		
+		int x;
+
+		Console.Write("Podaj liczbę: ");
+		liczba = Console.ReadLine();
+		
+		if (int.TryParse(liczba, out x))
+		{
+		  Console.Write("Sześcian podanej liczby wynosi: {0}", x*x*x);
+		}
+            
+         Console.Read(); 
+        }
+    }
+}
+
+
+zad. 5. Napisać program wczytujący z klawiatury długości boków prostokąta i wypisujący na ekranie konsoli jego pole i obwód.
+
+Poniższe rozwiązanie uzupełnij o obliczenie obwodu. 
+
+Rozwiązanie: 
+
+using System;
+
+namespace PoleProstokata 
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, pole;
+
+            Console.WriteLine("Program oblicza pole i obwod prostokata.");
+            
+	    Console.WriteLine("Podaj bok a.");
+            a = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj bok b.");
+            b = double.Parse(Console.ReadLine());
+
+            pole = a*b;
+
+            Console.Write("Pole prostokata o boku a = {0} i boku b = {1}", a, b);
+            Console.Write(" wynosi {0}.", pole);
+
+            Console.Read(); 
+        }
+    }
+}
+
+wskazówka do rozwiązania zadania 6: 
+
+Rozwiązanie: 
+
+using System;
+
+namespace StałaPi 
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Program wyświetla stałą matematyczną pi z dokładnością do 3 liczb po przecinku.");
+            
+	    	Console.WriteLine("Pi = {0:#.#}", Math.PI);
+		Console.WriteLine("Pi = {0:#.##}", Math.PI);
+		Console.WriteLine("Pi = {0:#.###}", Math.PI);
+
+            Console.Read(); 
+        }
+    }
+}
+
+
+zad. 8
+
+Rozwiązanie: 
+
+public static void Main(string[] args)
+        {
+           double r, vol;
+           
+           Console.Write("Podaj promień kuli r = ");
+           r = Convert.ToDouble(Console.ReadLine());
+         
+           vol = 4 * Math.PI * Math.Pow(r, 3) /3;
+         
+           Console.WriteLine("Objętość kuli o promieniu {0} wynosi {1:##.##}", r, vol);
+           Console.ReadLine();
+        }
+
+zad. 10 wskazówka: a % b
+
+zad. 12 wskazówka(proszę zwrócić uwagę że poniższy kod nie będzie poprawny w przypadku gdy wartość c nie będzie największa spośród liczb a,b,c):
+
+Rozwiązanie: 
+
+static void Main(string[] args)
+        {
+            int a, b, c;
+
+            Console.WriteLine("Podaj a.");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj b.");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj c.");
+            c = int.Parse(Console.ReadLine());
+
+            if ((a*a + b*b) == c*c)
+            {
+                Console.WriteLine("Liczby {0}, {1}, {2} są trójką pitagorejską.",a,b,c);
+            }
+            else
+            {
+                Console.WriteLine("Dane liczby nie są trójką pitagorejską.");
+            }
+
+            Console.Read();
+        }
+
+zad. 14 Napisać program który oblicza pierwiastki równania ax+b = 0 dla podanych przez użytkownika wartości a,b.
+
+Rozwiązanie: 
+
+using System;
+
+namespace Axplusb
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		int a,b;
+		double c;
+		
+		Console.WriteLine("Program oblicza pierwiastki rownania ax+b=0");
+		
+		Console.Write("Podaj wspolczynnik a: ");
+		a = int.Parse(Console.ReadLine());
+		Console.Write("Podaj wspolczynnik b: ");
+		b = int.Parse(Console.ReadLine());
+		
+		if (a == 0)
+		{
+			if (b == 0)
+			{
+			  Console.Write("Rownanie ma nieskonczenie wiele rozwiazan.");
+			}
+			else
+			{
+			  Console.Write("Rownanie sprzeczne");
+			}
+		  
+		}
+		else
+		{
+		  c = -b*1.0/a;
+		  Console.Write("Rownanie ma dokladnie jedno rozwiazanie: {0}", c);
+		}
+		
+            
+         Console.Read(); 
+        }
+    }
+}
+
+
+
+zad. 15(dodatkowe polecenie: w poniższym kodzie użyć mechanizmu obsługi wyjątków gdy a=0)
+
+Rozwiązanie: 
+
+using System;
+
+namespace RownanieKwadratowe
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double a, b, c, delta, x1, x2;
+
+            Console.WriteLine("Program oblicza pierwiastki równania ax^2+bx+c = 0.");
+            Console.WriteLine("Podaj a."); 
+            a = double.Parse(Console.ReadLine());
+
+            if (a == 0)
+            {
+                Console.WriteLine("Niedozwolona wartosc wspólczynnika a. Nacisnij dowolny klawisz.");
+            }
+            else
+            {
+                Console.WriteLine("Podaj b.");
+                b = double.Parse(Console.ReadLine());
+                Console.WriteLine("Podaj c.");
+                c = double.Parse(Console.ReadLine());
+
+                delta = b*b-4*a*c;
+
+                if (delta < 0)
+                {
+                    Console.WriteLine();
+                    Console.Write("Dla ");
+                    Console.Write("a = {0}, ", a);
+                    Console.Write("b = {0}, ", b);
+                    Console.Write("c = {0} ", c);
+                    Console.Write("brak pierwiastków rzeczywistych.");  
+                }
+                else
+                {
+                    if (delta == 0)
+                    {
+                        x1 = -b/(2*a);
+                        Console.WriteLine();
+                        Console.Write("Dla ");
+                        Console.Write("a = {0}, ", a);
+                        Console.Write("b = {0}, ", b);
+                        Console.Write("c = {0} ", c);
+                        Console.Write("trójmian ma jeden pierwiastek podwójny x1 = {0:##.##}.", x1); 
+                    }
+                    else
+                    {
+                        x1 = (-b-Math.Sqrt(delta))/(2*a); 
+                        x2 = (-b+Math.Sqrt(delta))/(2*a);
+                        Console.WriteLine();
+                        Console.Write("Dla ");
+                        Console.Write("a = {0}, ", a);
+                        Console.Write("b = {0}, ", b);
+                        Console.Write("c = {0} ", c);
+                        Console.WriteLine("trójmian ma dwa pierwiastki: x1 = {0:##.##}, x2 = {1:##.##}.", x1, x2);
+                    }
+                }
+            }
+
+            Console.Read(); 
+        }
+    }
+}
+
+
+zad. 16. Napisać program wczytujący z klawiatury liczbę całkowitą i wypisujący na ekran konsoli informację o jej parzystości.  
+
+wskazówka: (x % 2 == 0)
+
+Rozwiązanie: 
+
+using System;
+
+namespace Parzystosc
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		int liczba;
+	
+		Console.Write("Podaj liczbę: ");
+		liczba = int.Parse(Console.ReadLine());
+		
+		if (liczba % 2 == 0)
+		{
+		  Console.Write("Liczba {0} jest parzysta.", liczba);
+		}
+		else
+		{
+		  Console.Write("Liczba {0} jest nieparzysta.", liczba);
+		}
+		
+            
+         Console.Read(); 
+        }
+    }
+}
+
+
+
+zad. 18. Napisać program wczytujący z klawiatury liczbę całkowitą oznaczającą rok i wypisujący na ekranie konsoli informację czy jest to rok przestępny. 
+
+wskazówka(źródło: Wikipedia): 
+
+Obecnie powszechnie stosuje się rachubę zgodną z kalendarzem gregoriańskim, wprowadzonym w 1582 roku bullą papieża Grzegorza XIII ("Inter gravissimas"), w której wprowadzono następującą modyfikację kalendarza juliańskiego: nie uznaje się lat przestępnych wypadających na koniec wieku, z wyjątkiem tych, w których liczba stuleci jest podzielna przez 4. Np. rok 2200 nie będzie rokiem przestępnym, ale rok 2000 był. Inaczej mówiąc w myśl tej reguły latami przestępnymi są te, których numeracja:
+
+jest podzielna przez 4 i niepodzielna przez 100, lub
+jest podzielna przez 400.
+
+zad. 20. Napisać program wypisujący na ekranie konsoli wszystkie liczby naturalne nieparzyste z przedziału [1;100]
+
+Rozwiązanie: 
+
+using System;
+
+namespace Nieparzyste1_100
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		for(int i=1; i<=100;i++)
+		{
+			if (i%2==1) {
+				Console.WriteLine(i);
+				}
+			}
+			
+		Console.ReadKey();
+        }
+    }
+}
+
+
+zad. 22. Napisać program wypisujący na ekranie konsoli sumę wszystkich liczb naturalnych z przedziału [1;x], gdzie x podaje użytkownik w trakcie działania programu. (użyć tylko raz pętli while)
+
+w poniższym kodzie poprawić format wyświetlania odpowiedzi dla x<=3. 
+
+Rozwiązanie: 
+
+using System;
+
+namespace Suma1_xWhile
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		int x, i, suma;
+		
+		i=1;
+		suma = 0;
+		
+		Console.Write("Program oblicza sumę 1+2+...+x. Podaj x: ");
+		x = int.Parse(Console.ReadLine());
+		
+		while (i<=x){
+			
+			suma+=i;
+			i++;
+			
+			}
+		
+		Console.WriteLine("Suma wynosi 1+2+...+{0} wynosi {1}.",x,suma);
+		Console.ReadKey();
+        }
+    }
+}
+
+
+zad. 24. Napisać program wypisujący na ekranie konsoli sumę wszystkich liczb naturalnych nieparzystych z przedziału [1;x], gdzie x podaje użytkownik w trakcie działania programu. (użyć tylko raz pętli for)
+
+Rozwiązanie: 
+
+using System;
+
+namespace SumaOddFor
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		int x, i, suma;
+		
+		i=1;
+		suma = 0;
+		
+		Console.Write("Program oblicza sumę wszystkich liczb naturalnych nieparzystych z przedziału [1;x]. Podaj x: ");
+		x = int.Parse(Console.ReadLine());
+		
+		for(i=1;i<=x;i++){
+			
+			if (i%2==1){
+				suma+=i;	
+				}
+						
+			}
+		
+		Console.WriteLine("Suma wynosi {0}.",suma);
+		Console.ReadKey();
+        }
+    }
+}
+
+26. Napisać program wypisujący na ekranie konsoli sumę wszystkich liczb naturalnych nieparzystych z przedziału [1;x], gdzie x podaje użytkownik w trakcie działania programu. (użyć tylko raz pętli do...while)
+
+using System;
+
+namespace SumaOddDoWhile
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		int x, i, suma;
+		
+		i=1;
+		suma = 0;
+		
+		Console.Write("Program oblicza sumę wszystkich liczb naturalnych nieparzystych z przedziału [1;x]. Podaj x: ");
+		x = int.Parse(Console.ReadLine());
+		
+		do {
+			
+			suma+=i;
+			i+=2;
+				
+						
+			} while (i<=x);
+		
+		Console.WriteLine("Suma wynosi {0}.",suma);
+		Console.ReadKey();
+        }
+    }
+}
+
+
+28. Użytkownik podaje trzy liczby całkowite. Program oblicza najmniejszą z nich. 
+
+using System;
+
+namespace MathMax
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		int a,b,c;
+		
+		Console.Write("Podaj liczbę a: ");
+		a = int.Parse(Console.ReadLine());
+		Console.Write("Podaj liczbę b: ");
+		b = int.Parse(Console.ReadLine());
+		Console.Write("Podaj liczbę c: ");
+		c = int.Parse(Console.ReadLine());
+	
+		
+		Console.WriteLine("Najmniejsza liczba to {0}.", Math.Min(Math.Min(a,b),c));
+		Console.ReadKey();
+        }
+    }
+}
+
+
+
+
+30. Napisać program wypisujący na ekranie konsoli w jednej linijce znaki od 'A' do 'Z' (użyć tylko raz pętli for)
+
+using System;
+
+namespace AZFor
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		char znak;
+		
+		for(znak = 'A'; znak <= 'Z'; znak++){
+			Console.Write(znak);
+			}
+			
+		Console.ReadKey();
+        }
+    }
+}
+
+
+32. Napisać program który losuje liczbę całkowitą spośród liczb 1,2,3 i umożliwia użytkownikowi odgadnięcie wylosowanej liczby. Następnie wypisujący odpowiedni komunikat w zależności od wyniku.  
+
+using System;
+
+namespace Random123
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		Random losowa = new Random();
+		
+		int wylosowana, zgadywana;
+		
+		
+		for (int i=0; i<100; i++)
+		{
+			wylosowana = losowa.Next(1, 3);
+			// https://msdn.microsoft.com/en-us/library/2dx6wyd4(v=vs.110).aspx
+			Console.Write(wylosowana);
+			}
+		
+		Console.WriteLine();
+		wylosowana = losowa.Next(1, 4);
+		
+		Console.Write("Odgadnij liczbę jaką wylosował komputer: ");
+		zgadywana = int.Parse(Console.ReadLine());
+		
+		if (zgadywana==wylosowana)
+			Console.WriteLine("Odgadłeś!");
+		else
+			Console.WriteLine("Nie odgadłeś.");
+		
+		Console.ReadKey();
+        }
+    }
+}
+
+
+34. Napisać program który losuje 5 liczb rzeczywistych z przedziału [0;1]. Liczby są wypisane w jednej linijce, dokładność: 2 miejsca po przecinku.
+
+using System;
+
+namespace Random01
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		Random losowa = new Random();
+		
+		double wylosowana;
+		
+		
+		for (int i=0; i<5; i++)
+		{
+			wylosowana = losowa.NextDouble();
+			//https://msdn.microsoft.com/en-us/library/system.random.nextdouble.aspx
+			Console.WriteLine(wylosowana);
+			}
+		
+		
+		Console.ReadKey();
+        }
+    }
+}
+ 
+
+35. Napisać program który losuje 5 punktów z koła o promieniu 1. Współrzędne dla każdego punktu powinny być wpisane w osobnych liniach. (skorzystać z poprzedniego ćwiczenia)
+
+using System;
+
+namespace Kolo5
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		Random losowa = new Random();
+		
+		double wylosowana_x, wylosowana_y;
+		int licznik;
+		licznik = 0;
+		
+		while (licznik<5)
+		{
+			wylosowana_x = losowa.NextDouble();
+			wylosowana_y = losowa.NextDouble();
+			//https://msdn.microsoft.com/en-us/library/system.random.nextdouble.aspx
+			
+			if (wylosowana_x*wylosowana_x + wylosowana_y*wylosowana_y <= 1) 
+			{
+				Console.WriteLine("Punkt {0}: współrzena-x={1}, wspolrzedna-y={2}", licznik+1, wylosowana_x, wylosowana_y);
+			
+				licznik++;
+				}
+			
+			}
+		
+		
+		Console.ReadKey();
+        }
+    }
+}
+
+
+36. Napisać program który
+a) wczyta z klawiatury długość promienia koła R
+b) następnie wylosuje milion punktów z kwadratu opisanego na tym kole(kwadrat będzie miał wtedy długość 2R) (skorzystać z poprzedniego ćwiczenia)
+c) określi ilość punktów x które znajdują się jednocześnie w kole i kwadracie
+d) wypisze trzy wartości: ilosc wszystkich punktow, x oraz (double) 4.0*x/1000000
+
+using System;
+
+namespace MC
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		Random losowa = new Random();
+		
+		double wylosowana_x, wylosowana_y, promien;
+		int licznik, licznikWKole;
+		
+		licznik=0;
+		licznikWKole = 0;
+		
+		Console.Write("Podaj promień koła: ");
+		promien = int.Parse(Console.ReadLine());
+		
+		while (licznik<=100000)
+		{
+			wylosowana_x = promien*losowa.NextDouble();
+			wylosowana_y = promien*losowa.NextDouble();
+			//https://msdn.microsoft.com/en-us/library/system.random.nextdouble.aspx
+			licznik++;
+			
+			if (wylosowana_x*wylosowana_x + wylosowana_y*wylosowana_y <= promien*promien) 
+			{
+				licznikWKole++;
+				}
+			
+			}
+		
+		Console.WriteLine("Wszystkich: {0}, w kole: {1}, iloraz: {2}", licznik, licznikWKole, (double) 4*licznikWKole/licznik);
+		
+		Console.ReadKey();
+        }
+    }
+}
+
+37. Napisać program który pobiera od użytkownika 5 liczb które umieszcza w tablicy o nazwie tablica. Następnie wypisuje zawartość tej tablicy na ekran konsoli.(użyć tylko pętli for)
+
+using System;
+
+namespace tablica1
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		
+		int[] tablica = new int[5];
+		
+		for (int i=0; i<5; i++){
+			Console.Write("Podaj liczbę nr {0}: ", i+1);
+			tablica[i] = int.Parse(Console.ReadLine());
+			}
+		
+		Console.WriteLine("Zawartość tablicy:");
+		for (int i=0; i<5; i++){
+			Console.Write("{0} ",tablica[i]);
+			}
+		
+		Console.ReadKey();
+        }
+    }
+}
+
+39. Napisać program który pobiera od użytkownika 5 liczb które umieszcza w tablicy o nazwie tablica. Następnie pobiera od użytkownika dodatkową liczbę. Na koniec sprawdza czy ta liczba znajduje się w tablicy. 
+
+using System;
+
+namespace TablicaSzukaj
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		
+		int[] tablica = new int[5];
+		int poszukiwanyElement;
+		bool jest;
+		
+		for (int i=0; i<5; i++){
+			Console.Write("Podaj liczbę nr {0}: ", i+1);
+			tablica[i] = int.Parse(Console.ReadLine());
+			}
+		
+		Console.Write("Podaj liczbę do wyszukania: ");
+		poszukiwanyElement = int.Parse(Console.ReadLine());
+		
+		
+		jest = false;
+		
+		for (int i=0; i<5; i++){
+			
+			if (tablica[i]==poszukiwanyElement) {
+				jest=true;
+				break;
+				}
+			
+			}
+		
+		if (jest){
+			Console.WriteLine("Poszukiwany element znaleziono.");
+			}
+		else {
+			Console.WriteLine("Poszukiwanego elementu nie znaleziono.");
+			}	
+		
+		Console.ReadKey();
+        }
+    }
+}
+
+41. Napisać program który pobiera od użytkownika 5 liczb które umieszcza w tablicy o nazwie tablica. Następnie wypisuje informację która z nich jest najmniejsza oraz indeks tablicy pod którym ta liczba się znajduje. 
+
+using System;
+
+namespace TablicaMin
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		
+		int[] tablica = new int[5];
+		int najmniejszy, index;
+		
+		for (int i=0; i<5; i++){
+			Console.Write("Podaj liczbę nr {0}: ", i+1);
+			tablica[i] = int.Parse(Console.ReadLine());
+			}
+		
+		najmniejszy = tablica[0];
+		index = 0;
+		
+		for (int i=1; i<5; i++){
+			
+			if (tablica[i]<najmniejszy) {
+				najmniejszy = tablica[i];
+				index = i;
+				}
+			
+			}
+		
+		Console.WriteLine("Najmniejszy element tablicy wynosi: {0}. Znajduje się pod indeksem: {1}.", najmniejszy, index);
+		
+		Console.ReadKey();
+        }
+    }
+}
+
+
+44. Napisać program który pobiera od użytkownika dwie liczby naturalne dodatnie n i k. Następnie rysuje z gwiazdek na ekranie prostokąt
+posiadający n wierszy i k kolumn. Użyć pętli for.
+
+using System;
+
+namespace ProstokatZGwiazdek
+{
+	class Program
+	{
+		public static void Main (string[] args)
+		{
+
+			int i, j, n, k;
+			Console.Write ("Podaj liczbę naturalną dodatnią n = ");
+			n = Convert.ToInt32(Console.ReadLine ());
+			Console.Write ("Podaj liczbę naturalną dodatnią k = ");
+			k = Convert.ToInt32(Console.ReadLine ());
+
+			for (i = 1; i <= n; i++) {
+				for (j = 1; j <= k; j++) {
+					Console.Write("*");
+				}
+				Console.WriteLine("");
+			}
+
+			Console.ReadKey(true);
+		}
+	}
+}
+
+
+46. Napisać program który pobiera od użytkownika liczbę naturalną n (n>1). Następnie rysuje z gwiazdek trójkąt równoramienny, który
+nie jest trójkątem prostokątnym. Użyć pętli for. Przykładowo dla n=3 narysowany trójkąt powinien wyglądać tak:
+powinien wyglądać:
+  *
+ ***
+*****
+
+using System;
+
+namespace TrojkatRownoramiennyZGwiazdek
+{
+	class Program
+	{
+		public static void Main (string[] args)
+		{
+
+			int i, j, n;
+			Console.Write ("Podaj liczbę naturalną dodatnią n>1: ");
+			n = Convert.ToInt32(Console.ReadLine ());
+
+
+			for (i = 1; i <= n; i++) {
+
+				for (j = 1; j <= n-i; j++) {
+					Console.Write(" ");
+				}
+
+				for (j = 1; j <= 2*i-1; j++) {
+					Console.Write("*");
+				}
+
+				Console.WriteLine("");
+			}
+
+			Console.ReadKey(true);
+		}
+	}
+}
+
+49. Napisać program wypisujący tabliczkę mnożenia do 100 w formie tabelki:
+
+ 1  2  3  4  5  6  7  8  9 10
+ 2  4  6  8 10 12 14 16 18 20
+ 3  6  9 12 15 18 21 24 27 30
+ 4  8 12 16 20 24 28 32 36 40
+ 5 10 15 20 25 30 35 40 45 50
+ 6 12 18 24 30 36 42 48 54 60
+ 7 14 21 28 35 42 49 56 63 70
+ 8 16 24 32 40 48 56 64 72 80
+ 9 18 27 36 45 54 63 72 81 90
+10 20 30 40 50 60 70 80 90 100
+
+
+using System;
+
+namespace TabliczkaMnozenia
+{
+	class Program
+	{
+		public static void Main (string[] args)
+		{
+
+			int i, j;
+
+
+
+			for (i = 1; i <= 10; i++) {
+
+				for (j = 1; j <= 10; j++) {
+					Console.Write("{0,3} ", i*j);
+				}
+
+
+				Console.WriteLine("");
+			}
+
+			Console.ReadKey(true);
+		}
+	}
+}
+
+
+51. Napisać program wypisujący na ekranie sumę n początkowych liczb nieparzystych. Liczbę n należy pobrać od użytkownika. Przykładowo dla n=3 należy obliczyć sumę 1+3+5. Do obliczenia wartości sumy użyć pętli for.
+
+using System;
+
+namespace Zad51
+
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+			int n, i, suma;
+
+			int akt=1;
+			suma = 0;
+
+			Console.Write("Podaj n: ");
+			n = int.Parse(Console.ReadLine());
+
+			for(i=1;i<=n;i++){
+
+				suma+=akt;
+				akt+=2;
+			}
+
+			Console.WriteLine("Suma wynosi {0}.",suma);
+			
+			Console.ReadKey();
+		}
+	}
+}
+
+
+
+
+
