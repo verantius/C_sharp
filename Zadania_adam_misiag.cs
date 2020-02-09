@@ -52,6 +52,40 @@ namespace ConsoleApp2
 
             Console.ReadLine();
             //--------------------------------------------------------------------------------------------
+            //Zadanie 3------------------------------------------------------
+            static void Main(string[] args)
+        {
+            Console.Write("Podaj pierwszą liczbę:\n> ");
+            string P = Console.ReadLine();
+            Console.Write("Podaj drugą liczbę:\n> ");
+            string D = Console.ReadLine();
+
+            if (P.Length == D.Length)
+            {
+            string S = Reverse(D);
+            //Console.WriteLine(S);
+
+            if (P == S)
+            {
+                Console.WriteLine("Wyrazy są podobne");
+            }
+            else
+                Console.Write("Wyraz nie jest odbiciem lustrzanym\n ");
+
+
+            }
+            else
+                Console.Write("\nWyrazy się nie równają. Koniec programu. ");
+
+        }
+
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+            //--------------------------------------------------------------------------------------------
             //Zadanie 4------------------------------------------------------
             static void Main(string[] args)
             {
