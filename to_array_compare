@@ -1,0 +1,22 @@
+ Console.Write("Podaj pierwszą liczbę:\n> ");
+            string P = Console.ReadLine();
+            Console.Write("Podaj drugą liczbę:\n> ");
+            string D = Console.ReadLine();
+
+            
+            string[] firstArray = new string[P.Length];
+            string[] secondArray = new string[D.Length];
+            int counter = 0;
+
+            for (int i = 0; i < D.Length; i++)
+            {
+                firstArray[i] = P.Substring(counter, 1); // 1 is split length
+                secondArray[i] = D.Substring(counter, 1); // 1 is split length
+                counter++;
+            }
+           
+            Console.WriteLine(string.Join(" ", firstArray)); //output >>> 0 1 2 3 4 5
+            Console.WriteLine(string.Join(" ", secondArray)); //output >>> 0 1 2 3 4 5
+            Console.WriteLine("po transformacji"); 
+
+            Array.Reverse(secondArray);
