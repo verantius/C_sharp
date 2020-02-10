@@ -139,6 +139,51 @@ namespace ConsoleApp2
             Console.WriteLine($"\nSuma liczb parzystych wynosi: {parz}\nSuma liczb nieparzystych wynosi: {nparz}\n");
             Console.ReadLine();
             //---------------------------------------------------------------------------------------------------
+            //Zad.7.Napisz program sprawdzający czy podany numer jest numerem PESEL (11 cyfr i suma kontrolna)
+            Console.Write("Podaj liczbę PESEL:\n> ");
+			string numbers = Console.ReadLine();
+			
+			int[] sArray = new int[numbers.Length];
+			int[] iArray = new int[numbers.Length];
+            int sum = 0;
+            int cd ;
+
+            if (numbers.Length == 11)
+			{
+				for (int i = 0; i < numbers.Length; i++)
+					iArray[i] = numbers[i] - '0';
+
+				//for (int i = 0; i < numbers.Length; i++)
+				//	Console.Write(iArray[i] + " ");
+                //rangi
+                
+                sArray[0] = (iArray[0] * 1)%10;
+				sArray[1] = (iArray[1] * 3)%10;
+				sArray[2] = (iArray[2] * 7)%10;
+				sArray[3] = (iArray[3] * 9)%10;
+				sArray[4] = (iArray[4] * 1)%10;
+				sArray[5] = (iArray[5] * 3)%10;
+				sArray[6] = (iArray[6] * 7)%10;
+				sArray[7] = (iArray[7] * 9)%10;
+				sArray[8] = (iArray[8] * 1)%10;
+				sArray[9] = (iArray[9] * 3)%10;
+				sArray[10] = 0;
+
+                foreach (var y in sArray)
+                    sum += y;
+         
+                sum = sum%10;
+                cd = 10 - sum;
+                
+                if (iArray[10] == cd)
+				    Console.WriteLine("Numer pesel jest zgodny!");
+                else
+				    Console.WriteLine("Numer pesel jest NIE zgodny!");
+                
+            }
+			else
+				Console.WriteLine("Długość PESEL nie zgodna. Kniec Programu.");
+            //---------------------------------------------------------------------------------------------------
             //Zadanie 8. Napisz program wykonujący sumowanie cyfr w liczbie.Przykład.Wejście: 348 Wyjście: 15
             Console.Write("Podaj liczbe:\n>");
             string sum = Console.ReadLine();
