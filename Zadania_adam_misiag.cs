@@ -192,7 +192,55 @@ namespace ConsoleApp2
             Console.WriteLine($"\nSuma liczby: {sum} wynosi: {result}");
 
             Console.ReadLine();
-            //--------------------------------------------------------------------------------
+	    //---------------------------------------------------------------------------------------------------
+            //Zadanie 9.Napisz program, który dla n losowych liczb całkowitych wyświetli informację, która z nich występuje najczęściej i ile razy.
+            //Napisz program, który dla n losowych liczb całkowitych wyświetli informację
+            //która z nich występuje najczęściej i ile razy.
+            Random rnd = new Random();
+
+            int numbers = rnd.Next(10, 15);
+            int[] tab = new int[numbers];
+
+            for (int i = 0; i < numbers; i++)
+            {
+                tab[i] = rnd.Next(1, 21);
+
+            }
+            for (int i = 0; i < numbers; i++)
+            {
+                Console.WriteLine(tab[i]);
+
+            }
+            
+            //int[] numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+
+            int counter = 0;
+            int longestOccurance = 0;
+            int mostFrequentNumber = 0;
+
+            for (int i = 0; i < numbers; i++)
+            {
+                counter = 0;
+
+                for (int j = 0; j < numbers; j++)
+                {
+                    if (tab[j] == tab[i])
+                    {
+                        counter++;
+                    }
+                }
+
+                if (counter > longestOccurance)
+                {
+                    longestOccurance = counter;
+                    mostFrequentNumber = tab[i];
+                }
+            }
+
+            Console.WriteLine("\n");
+            Console.WriteLine($"numer który występuje najczęściej: {mostFrequentNumber} i występuje: {longestOccurance} razy");
+            
+	    //--------------------------------------------------------------------------------
             //Zadanie 10
             using System;
             using System.Collections.Generic;
