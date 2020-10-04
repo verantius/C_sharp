@@ -3,33 +3,37 @@
 
  static void Main(string[] args)
         {
-            int N, L, i, m = 0, flag = 0;
+            int N, i, m = 0, flag = 0;
             Random losowa = new Random();
-            
+
             Console.Write("Podaj promień ilośc testów\n> ");
             N = Convert.ToInt32(Console.ReadLine());
+            
+            int[] tablica = new int[N];
             Console.WriteLine("\n");
 
-            for (int j = 1; j <= N; j++)
+            for (int j = 0; j < N; j++)
             {
-                L= losowa.Next(1, 20);
-                //Console.WriteLine("liczba losowa{0}",L);
-                
+                tablica[j] = losowa.Next(1, 20);
+                Console.WriteLine(tablica[j]);
+            }
+
+            for (int j = 0; j < N; j++)
+            {
                 flag = 0;
-                
-            m = L / 2;
+
+                m = tablica[j] / 2;
+
                 for (i = 2; i <= m; i++)
                 {
-                    if (L % i == 0)
+                    if (tablica[j] % i == 0)
                     {
-                        Console.WriteLine("{0} Liczba losowa {1} nie liczbą pierwszą.", j, L);
+                        Console.WriteLine("{0} Liczba losowa {1} nie liczbą pierwszą.", j+1, tablica[j]);
                         flag = 1;
                         break;
                     }
                 }
                 if (flag == 0)
-                    Console.WriteLine("{0} Liczba losowa {1} jest liczbą pierwszą.", j, L);
-
-            }
-
+                    Console.WriteLine("{0} Liczba losowa {1} jest liczbą pierwszą.", j+1, tablica[j]);
+            } 
         }
