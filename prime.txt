@@ -1,0 +1,51 @@
+# C_sharp
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int num1,n;
+
+            Console.Write("Podaj Ilosc liczb n\n> ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for (int c = 3; c <= n; c++)
+                Console.WriteLine(c);
+
+
+            for (int j=3; j <= n; j++)
+            {
+                //Console.Write("Podaj liczbe\n> ");
+                //num1 = Convert.ToInt32(Console.ReadLine());
+                num1 = j;
+                //Console.WriteLine(num1);
+               // Console.WriteLine(num1);
+                if (num1 == 0 || num1 == 1)
+                {
+                    Console.WriteLine("NIE");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    for (int i = 2; i <= num1 / 2; i++)
+                    {
+                        if (num1 % i == 0)
+                        {
+                           // Console.Write("\n");
+                           // Console.Write(num1);
+                            Console.WriteLine("NIE");
+                        }
+                        else
+                        {
+                           // Console.Write("\n");
+                           // Console.Write(num1);
+                            Console.WriteLine("TAK");
+
+                        }
+                    }
+                }
+                
+            }
+                Console.ReadLine();
+            
+        }
+    }
