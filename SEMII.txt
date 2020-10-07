@@ -37,3 +37,47 @@
                     Console.WriteLine("{0} Liczba losowa {1} jest liczbą pierwszą.", j+1, tablica[j]);
             } 
         }
+#ZAD2# Cesar cipher
+static void Main(string[] args)
+        {
+            char[] alphabet = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            Console.WriteLine("type a message to encrypt it.");
+            string message = Console.ReadLine();
+            /*
+            string[] charactersToReplace = new string[] { @"\n", " " };
+            foreach (string s in charactersToReplace)
+            {
+                message = message.Replace(s, "");
+            }
+            */
+
+           //Console.Write("tutaj");
+           
+            char[] secretMessage = message.ToCharArray();
+            char[] encryptedMessage = new char[secretMessage.Length];
+
+            int i;
+            for (i = 0; i < secretMessage.Length; i++)
+            {
+               
+                char secretItem = secretMessage[i];
+
+                if (secretMessage[i] != ' ')
+                {
+                    
+                    int index = Array.IndexOf(alphabet, secretItem);  // this line
+                    int letterPosition = (index += 3) % 26;  // this line
+
+
+                    char encryptedCharacter = alphabet[letterPosition]; // this line now gets the encrypted character as a CHAR
+                    encryptedMessage[i] = encryptedCharacter; // so we can just pop it directly into the encrypted message!
+                }
+               
+            }
+
+            string superSecretMessage = String.Join("", encryptedMessage);
+            Console.Write(superSecretMessage);
+           
+        }
+        
+        #ZAD4#
