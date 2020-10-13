@@ -1,5 +1,24 @@
 # C_sharp
-#ZAD1# Sprawdź, które spośród danych liczb są liczbami pierwszymi. n - liczba testów n<100000, w kolejnych liniach n liczb z przedziału [1..10000].
+#ZAD1#Dodaj liczby całkowite
+static void Main(string[] args)
+        {
+            int A = Convert.ToInt32(Console.ReadLine());
+            int B = Convert.ToInt32(Console.ReadLine());
+            
+            while (A > 200||B>200)
+            {
+
+                Console.WriteLine("Podaj A oraz B raz jeszcze");
+                A = Convert.ToInt32(Console.ReadLine());
+                B = Convert.ToInt32(Console.ReadLine());
+            }
+            
+            int sum = A + B;
+            Console.WriteLine($"{sum}");
+
+        }
+
+#ZAD2# Sprawdź, które spośród danych liczb są liczbami pierwszymi. n - liczba testów n<100000, w kolejnych liniach n liczb z przedziału [1..10000].
 
  static void Main(string[] args)
         {
