@@ -25,17 +25,22 @@ static void Main(string[] args)
             int N, i, m = 0, flag = 0;
             Random losowa = new Random();
 
-            Console.Write("Podaj promień ilośc testów\n> ");
+            Console.Write("Podaj ilośc testów\n> ");
             N = Convert.ToInt32(Console.ReadLine());
-            
+            while (N > 100000)
+            {
+                Console.Write("Podaj N jeszcze raz\n> ");
+                N = Convert.ToInt32(Console.ReadLine());
+            }
             int[] tablica = new int[N];
             Console.WriteLine("\n");
 
             for (int j = 0; j < N; j++)
             {
-                tablica[j] = losowa.Next(1, 20);
+                tablica[j] = losowa.Next(1, 11);
                 Console.WriteLine(tablica[j]);
             }
+            Console.WriteLine("\n");
 
             for (int j = 0; j < N; j++)
             {
@@ -47,14 +52,16 @@ static void Main(string[] args)
                 {
                     if (tablica[j] % i == 0)
                     {
-                        Console.WriteLine("{0} Liczba losowa {1} nie liczbą pierwszą.", j+1, tablica[j]);
+                        //Console.WriteLine("{0} Liczba losowa {1} nie liczbą pierwszą.", j + 1, tablica[j]);
+                        Console.WriteLine("NIE");
                         flag = 1;
                         break;
                     }
                 }
                 if (flag == 0)
-                    Console.WriteLine("{0} Liczba losowa {1} jest liczbą pierwszą.", j+1, tablica[j]);
-            } 
+                    //Console.WriteLine("{0} Liczba losowa {1} jest liczbą pierwszą.", j + 1, tablica[j]);
+                    Console.WriteLine("TAK");
+            }
         }
 #ZAD2# Cesar cipher
 static void Main(string[] args)
