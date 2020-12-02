@@ -39,4 +39,81 @@ Results:
 
 
 --------------------------------------------------------------------------------------------------------------
+ZAD mniejsze/wieksze >=
+--------------------------------------------------------------------------------------------------------------
+//Console.WriteLine("Hello World!");
+            Console.Write("Podaj słowo\n> ");
+            string tway = Console.ReadLine();
 
+            int numer1 = Convert.ToInt32(tway.Split(' ')[0]);
+            int numer2 = Convert.ToInt32(tway.Split(' ')[2]);
+            string znak = tway.Split(' ')[1];
+
+            int count_n1 = tway.Split(' ')[0].Length;
+            int count_n2 = tway.Split(' ')[2].Length;
+
+            string strA = tway.Split(' ')[0];
+            string strB = tway.Split(' ')[2];
+            //t length1 = numer1.Length;
+            int Z = 0;
+            
+            int strEq =  String.Compare(strA, strB);
+
+            //Console.WriteLine($"TS: {strEq}");
+
+            if (znak == "==")
+            {
+                if (strEq == 0)
+                    Console.WriteLine("1");
+                else
+                    Console.WriteLine("0");
+            }
+            else if (znak == ">=")
+            {
+                if (count_n1 > count_n2)
+                    Console.WriteLine("1");
+                else if (count_n1 == count_n2)
+                {
+                    foreach (char y in strA)
+                    {
+                        foreach (char z in strB)
+                        {
+                            if (y >= z)                          
+                                Z++;
+                            else
+                                Z=0;
+                        }
+                        break;
+                    }
+                    //Console.WriteLine($"ZeD:{Z}");
+                    if (Z > 0)
+                        Console.WriteLine("1");
+                    else
+                        Console.WriteLine("0");
+
+                }
+                else
+                    Console.WriteLine("0");
+            }
+            else if (znak == ">=")
+            {
+                if (count_n1 >= count_n2 && numer1 >= numer2)
+                    Console.WriteLine("1");
+                else
+                    Console.WriteLine("0");
+            }
+            else if (znak == "!=")
+            {
+                if (strEq != 0)
+                    Console.WriteLine("1");
+                else
+                    Console.WriteLine("0");
+            }
+            else
+                Console.WriteLine("bledny znak!!");
+                
+
+
+
+
+            //Console.WriteLine($"{count_n1}");
