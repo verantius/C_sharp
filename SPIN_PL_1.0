@@ -1,0 +1,48 @@
+namespace SPIN_PL
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> lines = new List<string>();
+            int[] tablica = new int[10];
+            string mway;
+            //Console.WriteLine("Hello World!");
+            //
+            //int n = 6;// l. wierzchołkówint m = 9;// l. krawędzi
+            do
+            {
+                Console.Write("Podaj słowo{}\n> ");
+                mway = Console.ReadLine();
+                if (mway.Length != 0)
+                {
+                    string cc = (mway.side());
+                    lines.Add(cc);
+                }
+            }
+            while (mway.Length > 0);
+
+            foreach (string y in lines)
+                Console.WriteLine(y);
+
+            //int numer1 = Convert.ToInt32(tway.Split(' ')[0]);
+
+            Console.ReadKey();
+        }
+
+    }
+    static class Helper
+    {
+        public static string side(this string tway)
+        {
+
+            string znak = tway.Split(' ')[1];
+
+            int count_n1 = tway.Split(' ')[0].Length;
+            int count_n2 = tway.Split(' ')[2].Length;
+
+            string strA = tway.Split(' ')[0];
+            string strB = tway.Split(' ')[2];
+        }
+    }
+}
