@@ -1,0 +1,11 @@
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\bin\Debug\netcoreapp3.0\SPIN_PL.exe
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\bin\Debug\netcoreapp3.0\SPIN_PL.deps.json
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\bin\Debug\netcoreapp3.0\SPIN_PL.runtimeconfig.json
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\bin\Debug\netcoreapp3.0\SPIN_PL.runtimeconfig.dev.json
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\bin\Debug\netcoreapp3.0\SPIN_PL.dll
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\bin\Debug\netcoreapp3.0\SPIN_PL.pdb
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\obj\Debug\netcoreapp3.0\SPIN_PL.csprojAssemblyReference.cache
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\obj\Debug\netcoreapp3.0\SPIN_PL.AssemblyInfoInputs.cache
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\obj\Debug\netcoreapp3.0\SPIN_PL.AssemblyInfo.cs
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\obj\Debug\netcoreapp3.0\SPIN_PL.dll
+C:\Users\adas\Desktop\Algorytmy Lab\SPIN_PL\SPIN_PL\obj\Debug\netcoreapp3.0\SPIN_PL.pdb
