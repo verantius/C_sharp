@@ -1,0 +1,11 @@
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\bin\Debug\netcoreapp3.0\DIJKSTRA.exe
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\bin\Debug\netcoreapp3.0\DIJKSTRA.deps.json
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\bin\Debug\netcoreapp3.0\DIJKSTRA.runtimeconfig.json
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\bin\Debug\netcoreapp3.0\DIJKSTRA.runtimeconfig.dev.json
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\bin\Debug\netcoreapp3.0\DIJKSTRA.dll
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\bin\Debug\netcoreapp3.0\DIJKSTRA.pdb
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\obj\Debug\netcoreapp3.0\DIJKSTRA.csprojAssemblyReference.cache
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\obj\Debug\netcoreapp3.0\DIJKSTRA.AssemblyInfoInputs.cache
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\obj\Debug\netcoreapp3.0\DIJKSTRA.AssemblyInfo.cs
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\obj\Debug\netcoreapp3.0\DIJKSTRA.dll
+C:\Users\adas\Desktop\Algorytmy Lab\DIJKSTRA\DIJKSTRA\obj\Debug\netcoreapp3.0\DIJKSTRA.pdb
